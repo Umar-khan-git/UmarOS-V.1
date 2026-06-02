@@ -204,21 +204,21 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
 
         // 9. Default Categories (customizable)
         val defaultExpenseCats = listOf(
-            "Food", "Baqer", "Transport", "Eva VR", "emi TV", "LuLu", "wifi", 
-            "Tabby", "Tamara", "Appi", "haircut", "cleaners cash", "theatre", 
-            "noon", "recharge", "Marvel rivals", "Apparel", "Amazon", "watchman eidi", 
-            "Anemania", "khwaja bhai", "Sanjay", "Earpods", "Bluetooth dongle", 
-            "Samosa office", "Monitor", "Thermostat ac plug", "Charoli", "Iftar", 
-            "Cake appi", "To her", "Abdullah Jafza party", "Debt", "Other", "appi"
+            "Food", "Baqer", "Transport", "Eva VR", "emi TV", "LuLu", "wifi",
+            "Tabby", "Tamara", "Appi", "haircut", "cleaners cash", "theatre",
+            "noon", "recharge", "Marvel rivals", "Apparel", "Amazon", "watchman eidi",
+            "Anemania Abu dhabi", "khwaja bhai", "Sanjay", "Earpods", "Bluetooth dongle",
+            "Samosa office", "Monitor", "Thermostat ac plug", "Charoli", "Iftar",
+            "Cake appi", "To her", "Abdullah Jafza party", "Debt", "Other", "appi",
+            "Sans bus", "store", "genshin impact", "kq 200", "Aly", "Temu"
         )
         defaultExpenseCats.forEach { repository.insertCategory(CategoryEntity(name = it, type = "EXPENSE")) }
 
         val defaultIncomeCats = listOf("Salary", "Freelance", "To balance the red", "Debt", "Modified Bal.")
         defaultIncomeCats.forEach { repository.insertCategory(CategoryEntity(name = it, type = "INCOME")) }
 
-        // 10. Default Money Transactions (Imported from user's PDF ledger)
+        // 10. Default Money Transactions (Imported from Excel — Money Manager_01-06-2026)
         val defaultTx = listOf(
-            // May 2026 Ledger
             TransactionEntity(type = "EXPENSE", amount = 7.0, category = "Food", account = "My Adcb", dateString = "2026-05-29", timeString = "07:31 pm", note = "Beverages"),
             TransactionEntity(type = "EXPENSE", amount = 3.0, category = "Baqer", account = "My Adcb", dateString = "2026-05-29", timeString = "01:32 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 68.0, category = "Baqer", account = "My Adcb", dateString = "2026-05-29", timeString = "01:17 pm", note = ""),
@@ -227,11 +227,11 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 31.0, category = "Food", account = "My Adcb", dateString = "2026-05-28", timeString = "09:26 pm", note = "Eating out"),
             TransactionEntity(type = "EXPENSE", amount = 125.0, category = "Eva VR", account = "My Adcb", dateString = "2026-05-28", timeString = "09:09 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 36.0, category = "Food", account = "My Adcb", dateString = "2026-05-28", timeString = "07:52 pm", note = "Eating out"),
-            TransactionEntity(type = "EXPENSE", amount = 270.0, category = "emi TV", account = "Appi adcb", dateString = "2026-05-28", timeString = "07:34 pm", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 270.0, category = "emi TV", account = "My Adcb", dateString = "2026-05-28", timeString = "07:34 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 46.0, category = "Food", account = "My Adcb", dateString = "2026-05-27", timeString = "05:39 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 236.0, category = "LuLu", account = "My Adcb", dateString = "2026-05-27", timeString = "05:18 pm", note = ""),
-            TransactionEntity(type = "TRANSFER", amount = 100.0, category = "Saving box", account = "Cash in wallet", toAccount = "Saving box", dateString = "2026-05-27", timeString = "06:58 am", note = "Transfer to Saving box"),
-            TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Cash in wallet", account = "My Adcb", toAccount = "Cash in wallet", dateString = "2026-05-27", timeString = "06:19 am", note = "Transfer to Cash in wallet"),
+            TransactionEntity(type = "TRANSFER", amount = 100.0, category = "Saving box", account = "Cash in wallet", toAccount = "Saving box", dateString = "2026-05-27", timeString = "06:58 am", note = ""),
+            TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Cash in wallet", account = "My Adcb", toAccount = "Cash in wallet", dateString = "2026-05-27", timeString = "06:19 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 7.0, category = "Food", account = "My Adcb", dateString = "2026-05-27", timeString = "06:19 am", note = "Beverages"),
             TransactionEntity(type = "EXPENSE", amount = 24.0, category = "Food", account = "My Adcb", dateString = "2026-05-26", timeString = "11:12 pm", note = "Dinner"),
             TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Food", account = "My Adcb", dateString = "2026-05-26", timeString = "11:12 pm", note = "Eating out"),
@@ -250,7 +250,7 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 14.0, category = "Food", account = "My Adcb", dateString = "2026-05-15", timeString = "07:30 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 4.0, category = "Food", account = "My Adcb", dateString = "2026-05-15", timeString = "02:00 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 28.0, category = "Food", account = "My Adcb", dateString = "2026-05-15", timeString = "01:24 pm", note = "Lunch"),
-            TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-05-15", timeString = "10:18 pm", note = "breakfast"),
+            TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-05-15", timeString = "10:18 am", note = "breakfast"),
             TransactionEntity(type = "EXPENSE", amount = 26.0, category = "Baqer", account = "My Adcb", dateString = "2026-05-13", timeString = "07:42 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 6.0, category = "Food", account = "My Adcb", dateString = "2026-05-13", timeString = "10:11 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 16.0, category = "Food", account = "My Adcb", dateString = "2026-05-13", timeString = "10:09 am", note = "Lunch"),
@@ -262,16 +262,14 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 28.0, category = "Food", account = "My Adcb", dateString = "2026-05-10", timeString = "03:54 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 70.0, category = "theatre", account = "My Adcb", dateString = "2026-05-09", timeString = "08:40 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 25.0, category = "Baqer", account = "My Adcb", dateString = "2026-05-09", timeString = "02:26 pm", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 33.0, category = "Food", account = "My Adcb", dateString = "2026-05-08", timeString = "10:55 pm", note = "Dinner"),
+            TransactionEntity(type = "EXPENSE", amount = 33.0, category = "Food", account = "My Adcb", dateString = "2026-05-08", timeString = "10:54 pm", note = "Dinner"),
             TransactionEntity(type = "EXPENSE", amount = 26.0, category = "Food", account = "My Adcb", dateString = "2026-05-08", timeString = "09:49 am", note = "breakfast"),
             TransactionEntity(type = "INCOME", amount = 200.0, category = "appi", account = "My Adcb", dateString = "2026-05-08", timeString = "09:48 am", note = ""),
-
-            // May Week 1 / April bottom Ledger
             TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Food", account = "My Adcb", dateString = "2026-05-07", timeString = "10:01 pm", note = "Dinner"),
             TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-05-07", timeString = "01:14 pm", note = "Lunch"),
             TransactionEntity(type = "INCOME", amount = 152.0, category = "Modified Bal.", account = "My Adcb", dateString = "2026-05-06", timeString = "09:59 am", note = "Difference"),
-            TransactionEntity(type = "EXPENSE", amount = 48.0, category = "Other", account = "My Adcb", dateString = "2026-05-06", timeString = "09:56 am", note = "Food and grocery And other stuff"),
-            TransactionEntity(type = "EXPENSE", amount = 200.0, category = "cleaners cash", account = "Cash in wallet", dateString = "2026-05-06", timeString = "09:54 am", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 48.0, category = "Other", account = "My Adcb", dateString = "2026-05-06", timeString = "09:56 am", note = "Food and grocery"),
+            TransactionEntity(type = "EXPENSE", amount = 200.0, category = "cleaners cash", account = "Cash in wallet", dateString = "2026-05-06", timeString = "09:54 am", note = "And other stuff"),
             TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Saving box", account = "Cash in wallet", toAccount = "Saving box", dateString = "2026-05-06", timeString = "09:53 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 39.0, category = "Baqer", account = "My Adcb", dateString = "2026-05-05", timeString = "07:33 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 9.0, category = "Food", account = "My Adcb", dateString = "2026-05-05", timeString = "01:11 pm", note = "Lunch"),
@@ -306,7 +304,7 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 54.0, category = "Baqer", account = "My Adcb", dateString = "2026-04-26", timeString = "06:51 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 13.0, category = "Food", account = "My Adcb", dateString = "2026-04-26", timeString = "03:30 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 30.0, category = "Food", account = "My Adcb", dateString = "2026-04-26", timeString = "03:26 pm", note = "Lunch"),
-            TransactionEntity(type = "EXPENSE", amount = 76.0, category = "Food", account = "My Adcb", dateString = "2026-04-25", timeString = "04:14 pm", note = "Mcd"),
+            TransactionEntity(type = "EXPENSE", amount = 76.0, category = "Food", account = "My Adcb", dateString = "2026-04-25", timeString = "04:14 pm", note = "Lunch - Mcd"),
             TransactionEntity(type = "EXPENSE", amount = 40.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-04-25", timeString = "12:20 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Food", account = "My Adcb", dateString = "2026-04-24", timeString = "01:23 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 24.0, category = "Food", account = "My Adcb", dateString = "2026-04-22", timeString = "09:46 pm", note = "Lunch"),
@@ -314,14 +312,12 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Food", account = "My Adcb", dateString = "2026-04-22", timeString = "10:35 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 7.0, category = "Food", account = "My Adcb", dateString = "2026-04-22", timeString = "10:33 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 350.0, category = "Apparel", account = "My Adcb", dateString = "2026-04-21", timeString = "10:22 pm", note = "Clothing"),
-
-            // April Middle Ledger
             TransactionEntity(type = "EXPENSE", amount = 21.0, category = "Food", account = "My Adcb", dateString = "2026-04-21", timeString = "12:34 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 6.0, category = "Food", account = "My Adcb", dateString = "2026-04-21", timeString = "10:00 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 5.0, category = "Baqer", account = "My Adcb", dateString = "2026-04-18", timeString = "10:41 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 14.0, category = "Food", account = "My Adcb", dateString = "2026-04-17", timeString = "11:19 pm", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 15.0, category = "Food", account = "My Adcb", dateString = "2026-04-17", timeString = "07:29 pm", note = "Lunch"),
-            TransactionEntity(type = "EXPENSE", amount = 23.0, category = "Food", account = "My Adcb", dateString = "2026-04-17", timeString = "04:03 pm", note = "Sanjay"),
+            TransactionEntity(type = "EXPENSE", amount = 23.0, category = "Food", account = "My Adcb", dateString = "2026-04-17", timeString = "04:03 pm", note = "Lunch - Sanjay"),
             TransactionEntity(type = "EXPENSE", amount = 10.0, category = "Food", account = "My Adcb", dateString = "2026-04-17", timeString = "09:58 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-04-16", timeString = "11:08 am", note = "Lunch"),
             TransactionEntity(type = "EXPENSE", amount = 13.0, category = "Food", account = "My Adcb", dateString = "2026-04-16", timeString = "11:07 am", note = "Lunch"),
@@ -351,22 +347,19 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 171.0, category = "Amazon", account = "My Adcb", dateString = "2026-03-27", timeString = "11:59 am", note = "Thermostat ac plug"),
             TransactionEntity(type = "EXPENSE", amount = 5.0, category = "Baqer", account = "My Adcb", dateString = "2026-03-27", timeString = "11:20 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 169.0, category = "Food", account = "Cash in wallet", dateString = "2026-03-27", timeString = "11:00 am", note = ""),
-            TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Saving box", account = "Cash in wallet", toAccount = "Saving box", dateString = "2026-03-27", timeString = "10:59 am", note = "Saving box"),
+            TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Saving box", account = "Cash in wallet", toAccount = "Saving box", dateString = "2026-03-27", timeString = "10:59 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 73.0, category = "Tamara", account = "My Adcb", dateString = "2026-03-27", timeString = "10:37 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 135.0, category = "Tabby", account = "My Adcb", dateString = "2026-03-27", timeString = "10:36 am", note = "Abu dhabi comic con"),
             TransactionEntity(type = "INCOME", amount = 6000.0, category = "Salary", account = "My Adcb", dateString = "2026-03-27", timeString = "10:35 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 39.0, category = "Food", account = "Appi adcb", dateString = "2026-03-26", timeString = "08:25 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 18.0, category = "Baqer", account = "Cash in wallet", dateString = "2026-03-22", timeString = "07:00 pm", note = "Charoli"),
-            TransactionEntity(type = "EXPENSE", amount = 3.0, category = "Baqer", account = "Cash in wallet", dateString = "2026-03-22", timeString = "07:00 pm", note = "Charoli"),
-            TransactionEntity(type = "EXPENSE", amount = 105.0, category = "Food", account = "My Adcb", dateString = "2026-03-21", timeString = "10:15 pm", note = "Water"),
-            TransactionEntity(type = "EXPENSE", amount = 12.0, category = "watchman eidi", account = "Cash in wallet", dateString = "2026-03-21", timeString = "05:14 pm", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 42.0, category = "Food", account = "My Adcb", dateString = "2026-03-20", timeString = "07:43 am", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 48.0, category = "Baqer", account = "My Adcb", dateString = "2026-03-20", timeString = "07:42 am", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 20.0, category = "Food", account = "My Adcb", dateString = "2026-03-17", timeString = "04:58 pm", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Baqer", account = "My Adcb", dateString = "2026-03-16", timeString = "09:13 pm", note = ""),
-
-            // March Middle Ledger
-            TransactionEntity(type = "EXPENSE", amount = 70.0, category = "Food", account = "Cash in wallet", dateString = "2026-03-16", timeString = "05:40 pm", note = "Water"),
+            TransactionEntity(type = "EXPENSE", amount = 3.0, category = "Food", account = "My Adcb", dateString = "2026-03-21", timeString = "10:15 pm", note = "Water"),
+            TransactionEntity(type = "EXPENSE", amount = 105.0, category = "watchman eidi", account = "Cash in wallet", dateString = "2026-03-21", timeString = "05:14 pm", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 12.0, category = "Food", account = "My Adcb", dateString = "2026-03-20", timeString = "07:43 am", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 42.0, category = "Baqer", account = "My Adcb", dateString = "2026-03-20", timeString = "07:42 am", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 48.0, category = "Food", account = "My Adcb", dateString = "2026-03-17", timeString = "04:58 pm", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 20.0, category = "Baqer", account = "My Adcb", dateString = "2026-03-16", timeString = "09:13 pm", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 70.0, category = "Food", account = "Cash in wallet", dateString = "2026-03-16", timeString = "05:40 pm", note = "Water - Water"),
             TransactionEntity(type = "EXPENSE", amount = 20.0, category = "Food", account = "My Adcb", dateString = "2026-03-16", timeString = "05:08 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 15.0, category = "Transport", account = "My Adcb", dateString = "2026-03-16", timeString = "04:47 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 58.0, category = "Food", account = "My Adcb", dateString = "2026-03-16", timeString = "04:47 pm", note = ""),
@@ -384,7 +377,7 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-03-02", timeString = "06:04 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 20.0, category = "genshin impact", account = "My Adcb", dateString = "2026-03-02", timeString = "10:07 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 18.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-03-02", timeString = "01:19 am", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 20.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-03-02", timeString = "01:15 am", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 20.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-03-02", timeString = "01:14 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 37.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-03-02", timeString = "01:14 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 47.0, category = "Baqer", account = "My Adcb", dateString = "2026-02-27", timeString = "11:29 pm", note = "Cake appi"),
             TransactionEntity(type = "EXPENSE", amount = 136.0, category = "Tabby", account = "My Adcb", dateString = "2026-02-27", timeString = "04:42 pm", note = "Abu dhabi comic con"),
@@ -413,8 +406,6 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 33.0, category = "Transport", account = "Cash in wallet", dateString = "2026-02-14", timeString = "10:51 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 30.0, category = "Transport", account = "Cash in wallet", dateString = "2026-02-14", timeString = "10:50 am", note = ""),
             TransactionEntity(type = "TRANSFER", amount = 200.0, category = "Cash in wallet", account = "Appi adcb", toAccount = "Cash in wallet", dateString = "2026-02-14", timeString = "10:50 am", note = ""),
-
-            // February Ledger
             TransactionEntity(type = "EXPENSE", amount = 26.0, category = "Food", account = "My Adcb", dateString = "2026-02-13", timeString = "02:25 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 14.0, category = "Food", account = "My Adcb", dateString = "2026-02-12", timeString = "08:32 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-02-12", timeString = "01:19 pm", note = ""),
@@ -432,7 +423,7 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 10.0, category = "recharge", account = "My Adcb", dateString = "2026-02-08", timeString = "08:15 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 40.0, category = "Food", account = "My Adcb", dateString = "2026-02-08", timeString = "08:15 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 4.0, category = "Food", account = "My Adcb", dateString = "2026-02-06", timeString = "07:45 pm", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 4.0, category = "Food", account = "My Adcb", dateString = "2026-02-06", timeString = "07:59 am", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 4.0, category = "Food", account = "My Adcb", dateString = "2026-02-06", timeString = "07:58 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 199.0, category = "Food", account = "My Adcb", dateString = "2026-02-05", timeString = "12:56 pm", note = "Abdullah Jafza party"),
             TransactionEntity(type = "EXPENSE", amount = 4.0, category = "Food", account = "My Adcb", dateString = "2026-02-04", timeString = "01:57 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 209.0, category = "wifi", account = "My Adcb", dateString = "2026-02-04", timeString = "12:39 am", note = ""),
@@ -443,19 +434,19 @@ class DashboardViewModel(private val repository: DashboardRepository) : ViewMode
             TransactionEntity(type = "EXPENSE", amount = 43.0, category = "Food", account = "My Adcb", dateString = "2026-01-31", timeString = "09:15 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 34.0, category = "Marvel rivals", account = "My Adcb", dateString = "2026-01-31", timeString = "01:18 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 23.0, category = "Food", account = "My Adcb", dateString = "2026-01-30", timeString = "08:43 pm", note = ""),
-            TransactionEntity(type = "EXPENSE", amount = 166.0, category = "Baqer", account = "My Adcb", dateString = "2026-01-30", timeString = "08:39 pm", note = ""),
+            TransactionEntity(type = "EXPENSE", amount = 166.0, category = "Food", account = "My Adcb", dateString = "2026-01-30", timeString = "08:39 pm", note = "Baqer"),
             TransactionEntity(type = "EXPENSE", amount = 50.0, category = "Food", account = "My Adcb", dateString = "2026-01-30", timeString = "01:28 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 37.0, category = "Food", account = "My Adcb", dateString = "2026-01-29", timeString = "08:05 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 40.0, category = "Aly", account = "My Adcb", dateString = "2026-01-29", timeString = "08:05 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 8.0, category = "Food", account = "My Adcb", dateString = "2026-01-29", timeString = "01:13 pm", note = ""),
-            TransactionEntity(type = "TRANSFER", amount = 3500.0, category = "My Adcb", account = "Appi adcb", toAccount = "My Adcb", dateString = "2026-01-29", timeString = "11:22 am", note = ""),
+            TransactionEntity(type = "TRANSFER", amount = 3500.0, category = "Appi adcb", account = "My Adcb", toAccount = "Appi adcb", dateString = "2026-01-29", timeString = "11:22 am", note = ""),
             TransactionEntity(type = "TRANSFER", amount = 5000.0, category = "My Adcb", account = "Appi adcb", toAccount = "My Adcb", dateString = "2026-01-29", timeString = "11:21 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 285.0, category = "Aly", account = "Appi adcb", dateString = "2026-01-28", timeString = "10:32 pm", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 73.0, category = "Tamara", account = "Appi adcb", dateString = "2026-01-28", timeString = "07:23 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 140.0, category = "Temu", account = "Appi adcb", dateString = "2026-01-28", timeString = "07:22 am", note = ""),
             TransactionEntity(type = "EXPENSE", amount = 50.0, category = "recharge", account = "Appi adcb", dateString = "2026-01-28", timeString = "07:21 am", note = ""),
             TransactionEntity(type = "TRANSFER", amount = 500.0, category = "Saving box", account = "Appi adcb", toAccount = "Saving box", dateString = "2026-01-28", timeString = "07:21 am", note = ""),
-            TransactionEntity(type = "INCOME", amount = 6000.0, category = "Salary", account = "Appi adcb", dateString = "2026-01-28", timeString = "07:21 am", note = "")
+            TransactionEntity(type = "INCOME", amount = 6000.0, category = "Salary", account = "Appi adcb", dateString = "2026-01-28", timeString = "07:21 am", note = ""),
         )
         defaultTx.forEach { repository.insertTransaction(it) }
     }
